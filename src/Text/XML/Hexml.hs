@@ -56,7 +56,7 @@ foreign import ccall hexml_node_children :: Ptr CDocument -> Ptr CNode -> Ptr CI
 foreign import ccall hexml_node_attributes :: Ptr CDocument -> Ptr CNode -> Ptr CInt -> IO (Ptr CAttr)
 
 foreign import ccall hexml_node_child :: Ptr CDocument -> Ptr CNode -> Ptr CNode -> CString -> CInt -> IO (Ptr CNode)
-foreign import ccall hexml_node_attribute :: Ptr CDocument -> Ptr CNode -> CString -> CInt -> IO (Ptr CAttr)
+foreign import ccall unsafe hexml_node_attribute :: Ptr CDocument -> Ptr CNode -> CString -> CInt -> IO (Ptr CAttr)
 
 -- | A node in an XML document, created by 'parse', then calling functions such
 --   as 'children' on that initial 'Node'.
